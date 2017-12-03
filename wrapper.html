@@ -23,7 +23,13 @@
     {% endif %}
 
     <meta property="og:title" content="{% include_tmpl page.followup.share_title_value %}" />
+
+    {% if page.followup.share_image_value %}
     {{ page.followup.share_image_tag }}
+    {% elif event.is_open_for_signup %}
+    <meta property="og:image" content="https://s3.amazonaws.com/s3.peoplepower.org/images/aclu-rsvpnow.png" />
+    {% endif %}
+    
     <meta name="description" property="og:description"
           content="{% block description %}{% include_tmpl page.followup.share_description_value %}{% endblock %}">
     {{ page.followup.share_url_tag }}
