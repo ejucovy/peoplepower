@@ -24,12 +24,8 @@
 
     <meta property="og:title" content="{% include_tmpl page.followup.share_title_value %}" />
     {{ page.followup.share_image_tag }}
-    {% if form.id %}
     <meta name="description" property="og:description"
           content="{% block description %}{% include_tmpl page.followup.share_description_value %}{% endblock %}">
-    {% else %}
-    <meta name="description" property="og:description" content="We're organizing grassroots volunteers to fight for civil rights and liberties.">
-    {% endif %}
     {{ page.followup.share_url_tag }}
     <meta property="og:site_name" content="{% filter ak_text:"org_name" %}{% client_name %}{% endfilter %}">
     <meta name="twitter:card" value="summary_large_image">
