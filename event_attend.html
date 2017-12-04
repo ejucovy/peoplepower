@@ -109,11 +109,13 @@
                      href="/share/link?type=fb&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}" target="_blank">
                     <span class="box"><span class="icon"></span>Post to Facebook</a></span>
                 </div>
+                {% with 'Join me for an @ACLU People Power Action Event in'|concatenate:event.city_etc_no_postal as default_tweet %}
                 <div class="thanks-share-twitter">
                   <a class="buttonA3 icon-twitter ak-twitter"
-                     href="/share/link?type=tw&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}&amp;tweet={% include_tmpl page.followup.twitter_message %}" target="_blank">
+                     href="/share/link?type=tw&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}&amp;tweet={% include_tmpl page.followup.twitter_message|default:default_tweet %}" target="_blank">
                     <span class="box"><span class="icon"></span>Share on Twitter</a></span>
                 </div>
+                {% endwith %}
 	        </div>
             </div>
         </div>
