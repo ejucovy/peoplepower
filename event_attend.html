@@ -110,6 +110,7 @@
                     <span class="box"><span class="icon"></span>Post to Facebook</a></span>
                 </div>
                 {% with 'Join me for an @ACLU People Power Action Event in' as default_tweet %}
+                {{ default_tweet }}
                 <div class="thanks-share-twitter">
                   <a class="buttonA3 icon-twitter ak-twitter"
                      href="/share/link?type=tw&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}&amp;tweet={% include_tmpl page.followup.twitter_message|default:default_tweet %}" target="_blank">
