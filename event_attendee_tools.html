@@ -73,7 +73,7 @@ function scrollToAnchor(aid){
           
           <div class="thanks-share-twitter">
             <a class="buttonA3 icon-twitter ak-twitter"
-               href="/share/link?type=tw&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}&amp;tweet={% if page.followup.twitter_message %}{% include_tmpl page.followup.twitter_message %}{% else %}Join me for an @ACLU People Power Action Event in {{ event.city_etc_no_postal }}{% endif %}" target="_blank">
+               href="/share/link?type=tw&amp;page_name={{ event.campaign.signup_page.name }}&amp;append=../{{ event.id }}&amp;action_id={{action.id}}&amp;akid={{akid}}&amp;tweet={% if page.followup.twitter_message %}{% include_tmpl page.followup.twitter_message %}{% else %}Join me for an @ACLU People Power Action Event in {{ event.city_etc_no_postal }}!{% endif %}" target="_blank">
               <span class="box"><span class="icon"></span>Share on Twitter</a></span>
           </div>
           
