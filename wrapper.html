@@ -22,7 +22,7 @@
     <meta property="og:type" content="article">
     {% endif %}
 
-    <meta property="og:title" content="{% include_tmpl page.followup.share_title_value %}" />
+    <meta property="og:title" content="{% if page.followup.share_title_value %}{% include_tmpl page.followup.share_title_value %}{% elif event.is_open_for_signup %}Join a People Power Action Event in {{ event.city_etc_no_postal }}{% else %}{{ page.title }}{% endif %}" />
 
     {% if page.followup.share_image_value %}
     {{ page.followup.share_image_tag }}
@@ -32,7 +32,7 @@
     
     {% if form.id %}
     <meta name="description" property="og:description"
-          content="{% block description %}{% include_tmpl page.followup.share_description_value %}{% endblock %}">
+          content="{% block description %}{% if page.followup.share_description_value %}{% include_tmpl page.followup.share_description_value %}{% else %}We're organizing grassroots volunteers to fight for civil rights and liberties.{% endif %}{% endblock %}">
     {% endif %}
     
     {{ page.followup.share_url_tag }}
