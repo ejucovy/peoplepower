@@ -30,8 +30,11 @@
     <meta property="og:image" content="https://s3.amazonaws.com/s3.peoplepower.org/images/aclu-rsvpnow.png" />
     {% endif %}
     
+    {% if form.id %}
     <meta name="description" property="og:description"
           content="{% block description %}{% include_tmpl page.followup.share_description_value %}{% endblock %}">
+    {% endif %}
+    
     {{ page.followup.share_url_tag }}
     <meta property="og:site_name" content="{% filter ak_text:"org_name" %}{% client_name %}{% endfilter %}">
     <meta name="twitter:card" value="summary_large_image">
